@@ -16,7 +16,7 @@ const PinSchema = new mongoose.Schema(
       }
     ]
   },
-  { timestaps: true }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("Pin", PinSchema);
