@@ -6,10 +6,10 @@ import withRoot from "../withRoot";
 
 const App = () => {
   return (
-    <React.Fragment>
+    <>
       <Header />
       <Map />
-    </React.Fragment>
+    </>
   );
 };
 

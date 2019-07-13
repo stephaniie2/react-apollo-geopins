@@ -4,7 +4,9 @@ import { withStyles } from "@material-ui/core/styles";
 // import Button from "@material-ui/core/Button";
 // import Typography from "@material-ui/core/Typography";
 // import DeleteIcon from "@material-ui/icons/DeleteTwoTone";
+
 import PinIcon from "./PinIcon";
+import Blog from "./Blog";
 import Context from "../context";
 
 const INITIAL_VIEWPORT = {
@@ -44,7 +46,7 @@ const Map = ({ classes }) => {
   };
 
   return (
-    <div classes={classes.root}>
+    <div className={classes.root}>
       <ReactMapGL
         width="100vw"
         height="calc(100vh - 64px)"
@@ -85,6 +87,8 @@ const Map = ({ classes }) => {
           </Marker>
         )}
       </ReactMapGL>
+      <Blog />
+      {/*Blog Area to add Pin Content */}
     </div>
   );
 };

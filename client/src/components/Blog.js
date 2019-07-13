@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { withStyles } from "@material-ui/core/styles";
-// import { Paper } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+
+import Context from "../context";
+import NoContent from "./Pin/NoContent";
+import CreatePin from "./Pin/CreatePin";
 
 const Blog = ({ classes }) => {
-  return <div>Blog</div>;
+  const mobileSize = useMediaQuery("(max-width: 650px)");
+  const { state } = useContext(Context);
+  const { draft } = state;
+
+  let BlogContent;
+  if (!draft) {
+    // nocontent
+    BlogContent = NoContent;
+  } else if (draft) {
+    // create pin
+    BlogContent = CreatePin;
+  }
+  return (
+    <Paper className={mobileSize ? classes.rootMobile : classes.root}>
+      <BlogContent />
+    </Paper>
+  );
 };
 
 const styles = {
